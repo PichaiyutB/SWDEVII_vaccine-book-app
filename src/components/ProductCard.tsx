@@ -1,13 +1,13 @@
 import styles from './ProductCard.module.css'
 import Image from 'next/image';
-export default function ProductCard(){
+export default function ProductCard({hospitalName , imgSrc} : {hospitalName:string , imgSrc:string}){
     return (
-        <div className={styles.card}>
-            <div className={styles.cardimg}>
-                <Image src='/img/vaccard.jpg' alt='Product Picture' fill={true} objectFit='cover'/>
+        <div className='w-1/5 h-[300px] rounded-lg shadow-lg'>
+            <div className='w-full h-[70%] relative rounded-t-lg'>
+                <Image src={imgSrc} alt='Product Picture' fill={true} className='object-cover rounded-t-lg'/>
             </div>
-            <div className={styles.cardtext}>
-                วัคซีนโควิด การฉีดวัคซีนป้องกันโควิด-19 สามารถลดการแพร่ระบาด ลดความรุนแรงของอาการ
+            <div className='w-full h-[30%] p-[10px] text-black'>
+                {hospitalName}
             </div>
         </div>
     );

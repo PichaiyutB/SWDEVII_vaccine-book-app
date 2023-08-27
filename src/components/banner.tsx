@@ -9,7 +9,7 @@ export default function Banner(){
             priority
             />
             <div className={styles.bannerText}>
-                <h1>ประชาสัมพันธ์การให้บริการวัคซีน</h1>
+                <h1 className='text-3xl font-medium'>ประชาสัมพันธ์การให้บริการวัคซีน</h1>
             </div>
         </div>
     );
