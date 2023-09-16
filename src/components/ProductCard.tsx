@@ -7,7 +7,9 @@ import Rating from '@mui/material/Rating';
 export default function ProductCard({hospitalName , imgSrc , onCompare, state} : 
     {hospitalName:string , imgSrc:string , onCompare:Function ,state: Map<string,number>})
     {
-    let rating= state.get(hospitalName)||0 ;        
+
+    let rating= state.get(hospitalName)||0 ;
+
     return (
         <InteractiveCard contentName={hospitalName}>
             <div className='w-full h-[70%] relative rounded-t-lg'>
@@ -16,11 +18,12 @@ export default function ProductCard({hospitalName , imgSrc , onCompare, state} :
             <div className='w-full h-[15%] p-[10px] text-black'>
                 {hospitalName}
             </div>
-           
+            <div onClick={(e)=>{e.stopPropagation()}}>
             <Rating name="simple-controlled" className='h-[10%] mx-2 px-1 py-1'  
             value={rating}
-            onChange={(e,newValue)=>{e.stopPropagation(); onCompare(hospitalName,newValue)}} 
+            onChange={(e,newValue)=>{ e.stopPropagation(); e.preventDefault(); onCompare(hospitalName,newValue); }} 
             precision={1}/>
+            </div>
         </InteractiveCard>
     );
 }
