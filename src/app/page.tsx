@@ -4,11 +4,8 @@ import Banner from '@/components/banner'
 export default function Home() {
   return (
     <main>
-     
         <Banner/>
-        <PromoteCard></PromoteCard>
-      
-      
+        <PromoteCard></PromoteCard>  
     </main>
   )
 }
