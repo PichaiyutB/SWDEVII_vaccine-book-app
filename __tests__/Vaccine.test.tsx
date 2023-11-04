@@ -38,8 +38,8 @@ describe('HospitalCatalog' , ()=>{
 
         await waitFor(
             ()=>{
-                const carImages = screen.queryAllByRole('img')
-                expect(carImages.length).toBe(2)
+                const hospitalImages = screen.queryAllByRole('img')
+                expect(hospitalImages.length).toBe(2)
             }
         )
     })
