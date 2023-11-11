@@ -15,10 +15,9 @@ export default async function HospitalCatalog({hospitalJson}: {hospitalJson:Obje
                     <Link href={`/hospital/${hospitalItem.id}`}  className="w-1/5">
                     <ProductCard hospitalName = {hospitalItem.name} imgSrc = {hospitalItem.picture}/>
                     </Link>
-
                 ))
                 }
-            </div>
+        </div>
         
         </>
     )

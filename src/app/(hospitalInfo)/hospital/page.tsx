@@ -10,8 +10,16 @@ import AddHospitalForm from "@/components/AddHospitalForm";
 
 export default async function Hospital() {
     const hospital = getHospitals()
+
     const session = await getServerSession(authOptions)
-    if(!session || !session.user.token) return null
+    if(!session || !session.user.token) return (
+        <main className="text-center p-5">
+            <h1 className="text-xl font-medium text-black">Select Your Hospital</h1>
+            <Suspense fallback={ <p>Loading ... <LinearProgress/></p>}>
+                <HospitalCatalog hospitalJson={hospital}/>
+            </Suspense> 
+        </main>
+    )
     const profile = await getUserProfile(session.user.token)
     return (
         <main className="text-center p-5">
